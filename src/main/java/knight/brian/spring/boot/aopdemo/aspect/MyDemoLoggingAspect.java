@@ -7,8 +7,17 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class MyDemoLoggingAspect {
+    // Match Any class addAccount()
+    //@Before("execution(public void addAccount())")
 
-    @Before("execution(public void add*())")
+    // Match declared class addAccount()
+    //@Before("execution(public void knight.brian.spring.boot.aopdemo.dao.AccountDAO.addAccount())")
+
+    // Match Any method starting with add
+    //@Before("execution(public void add*())")
+
+    // Match Return Type (modifier is optional)
+    @Before("execution(* add*())")
     public void beforeAddAccountAdvice() {
         System.out.println("\n=====>>> Executing @Before on addAccount()");
     }
