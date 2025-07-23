@@ -4,6 +4,6 @@ import knight.brian.spring.boot.aopdemo.Account;
 
 public interface AccountDAO {
 
-    void addAccount(Account account);
+    void addAccount(Account account, boolean isVIP);
 
 }
