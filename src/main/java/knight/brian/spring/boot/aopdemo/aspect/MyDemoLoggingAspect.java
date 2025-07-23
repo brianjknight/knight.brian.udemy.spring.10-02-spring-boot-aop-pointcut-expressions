@@ -23,7 +23,13 @@ public class MyDemoLoggingAspect {
     // @Before("execution(* add*(knight.brian.spring.boot.aopdemo.Account))")
 
     // Match first declared type and zero or more additional params
-    @Before("execution(* add*(knight.brian.spring.boot.aopdemo.Account, ..))")
+    // @Before("execution(* add*(knight.brian.spring.boot.aopdemo.Account, ..))")
+
+    // Match any params
+    // @Before("execution(* add*(..))")
+
+    // Match and class and method in the dao Package
+    @Before("execution(* knight.brian.spring.boot.aopdemo.dao.*.*(..))")
     public void beforeAddAccountAdvice() {
         System.out.println("\n=====>>> Executing @Before on addAccount()");
     }
