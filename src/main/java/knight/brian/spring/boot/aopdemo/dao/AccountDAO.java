@@ -1,7 +1,9 @@
 package knight.brian.spring.boot.aopdemo.dao;
 
+import knight.brian.spring.boot.aopdemo.Account;
+
 public interface AccountDAO {
 
-    void addAccount();
+    void addAccount(Account account);
 
 }

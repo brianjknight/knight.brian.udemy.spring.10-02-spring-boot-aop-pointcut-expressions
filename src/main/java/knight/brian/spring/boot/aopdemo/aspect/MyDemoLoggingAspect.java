@@ -17,7 +17,10 @@ public class MyDemoLoggingAspect {
     //@Before("execution(public void add*())")
 
     // Match Return Type (modifier is optional)
-    @Before("execution(* add*())")
+    // @Before("execution(* add*())")
+
+    // Match param declared type
+    @Before("execution(* add*(knight.brian.spring.boot.aopdemo.Account))")
     public void beforeAddAccountAdvice() {
         System.out.println("\n=====>>> Executing @Before on addAccount()");
     }
